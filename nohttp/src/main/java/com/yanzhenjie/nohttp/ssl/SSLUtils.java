@@ -18,6 +18,7 @@ package com.yanzhenjie.nohttp.ssl;
 import android.os.Build;
 
 import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 
@@ -28,7 +29,13 @@ public class SSLUtils {
 
     private static final HostnameVerifier HOSTNAME_VERIFIER = new HostnameVerifier() {
         public boolean verify(String hostname, SSLSession session) {
-            return true;
+            if("college.sipedu.org".equals(hostname)){
+                return true;
+            } else {
+                HostnameVerifier hv =
+                        HttpsURLConnection.getDefaultHostnameVerifier();
+                return hv.verify(hostname, session);
+            }
         }
     };
 

@@ -5,8 +5,8 @@ ext {
                bintray    : 'com.jfrog.bintray']
 
     android = [applicationId          : "com.yanzhenjie.nohttp.sample",
-               compileSdkVersion      : 27,
-               buildToolsVersion      : "27.0.3",
+               compileSdkVersion      : 30,
+               buildToolsVersion      : "30.0.3",
 
                librayMinSdkVersion    : 9,
                libraryTargetSdkVersion: 27,
